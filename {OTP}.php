@@ -310,27 +310,6 @@ else{
 }
 
 
-//TOKOPEDIA
-$curl = curl_init();
-curl_setopt_array($curl, array(
-  CURLOPT_URL => 'https://www.tokopedia.com/login?ld=https://seller.tokopedia.com/shop-score-page',
-  CURLOPT_RETURNTRANSFER => true,
-CURLOPT_TIMEOUT => 10,
-  CURLOPT_CUSTOMREQUEST => 'POST',
-  CURLOPT_POSTFIELDS =>'phone_number='.$nomor,
-  CURLOPT_HTTPHEADER => array(
-    'Content-Type: html'
-  ),
-));
-$response = curl_exec($curl);
-//echo $response;
-$result = fetch_value($response,'"message":"','","');
-if ($result == 'OTP akan segera dikirim ke perangkat') {
-  echo color("green"," ".acak(3)." Spam Whatsapp Ke ".$nomor."\n");
-}
-else{
-  echo " BISATOPUP ".$response."\n";
-
 
 //BISATOPUP
 $curl = curl_init();
