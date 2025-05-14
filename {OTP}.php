@@ -319,7 +319,7 @@ CURLOPT_TIMEOUT => 10,
   CURLOPT_CUSTOMREQUEST => 'POST',
   CURLOPT_POSTFIELDS =>'phone_number='.$nomor,
   CURLOPT_HTTPHEADER => array(
-    'Content-Type: application/x-www-form-urlencoded'
+    'Content-Type: html'
   ),
 ));
 $response = curl_exec($curl);
