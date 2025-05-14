@@ -135,8 +135,8 @@ else{
 }}
 
 
-$username = 'hanx-666'; // Nama pengguna GitHub
-$repository = 'spam-wa'; // Nama repository
+$username = 'twentyisme1'; // Nama pengguna GitHub
+$repository = 'project'; // Nama repository
 $branch = 'main'; // Branch atau tag yang ingin diunduh
 $localFolder = __DIR__ ; // Folder tujuan
 $versionFile = __DIR__ .'/version.txt'; // File versi lokal
