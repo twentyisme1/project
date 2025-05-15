@@ -103,7 +103,7 @@ else{
     function tokopedia($nomor,$url) {
 $curl = curl_init();
 curl_setopt_array($curl, array(
-  CURLOPT_URL => 'https://www.tokopedia.com/login?ld=https://seller.tokopedia.com/shop-score-page',
+  CURLOPT_URL => 'https://accounts.tokopedia.com/login?ld=https://developer.tokopedia.com/console',
   CURLOPT_RETURNTRANSFER => true,
 CURLOPT_TIMEOUT => 10,
   CURLOPT_CUSTOMREQUEST => 'POST',
@@ -121,7 +121,7 @@ if ($result == 'Nomor terdaftar') {
 elseif ($result == 'Nomor Handphone tidak terdaftar') {
 }
 else{
-  echo " TOKOPEDIA ".$url." ".$response."\n";
+  echo " tokopedia ".$url." ".$response."\n";
 }
     
 $curl = curl_init();
