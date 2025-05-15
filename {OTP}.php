@@ -99,6 +99,31 @@ elseif ($result == 'Nomor Handphone tidak terdaftar') {
 else{
   echo " SERPUL ".$url." ".$response."\n";
 }
+
+    function tokopedia($nomor,$url) {
+$curl = curl_init();
+curl_setopt_array($curl, array(
+  CURLOPT_URL => 'https://www.tokopedia.com/login?ld=https://seller.tokopedia.com/shop-score-page',
+  CURLOPT_RETURNTRANSFER => true,
+CURLOPT_TIMEOUT => 10,
+  CURLOPT_CUSTOMREQUEST => 'POST',
+  CURLOPT_POSTFIELDS =>'{"phone_number":"'.$nomor.'"}',
+  CURLOPT_HTTPHEADER => array(
+    'Content-Type:  application/json'
+  ),
+));
+$response = curl_exec($curl);
+//echo $response;
+$result = fetch_value($response,'{"message":"','"');
+if ($result == 'Nomor terdaftar') {
+  goto otptokopedia;
+}
+elseif ($result == 'Nomor Handphone tidak terdaftar') {
+}
+else{
+  echo " TOKOPEDIA ".$url." ".$response."\n";
+}
+    
 $curl = curl_init();
 curl_setopt_array($curl, array(
   CURLOPT_URL => 'https://'.$url.'-api.serpul.co.id/api/v2/auth/register',
